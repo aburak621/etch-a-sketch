@@ -41,6 +41,7 @@ onmousedown = (e) => {
         case 2:
             rmbDown = true;
             break;
+
         default:
             break;
     }
@@ -57,6 +58,7 @@ onmouseup = (e) => {
         case 2:
             rmbDown = false;
             break;
+
         default:
             break;
     }
@@ -72,10 +74,24 @@ function createGrid(sideLength) {
             cell.classList.add('cell');
             cell.setAttribute('onmousedown', 'return false');
             cell.addEventListener('mouseenter', (e) => {
-                handleMouseButtons(cell);
+                if (lmbDown) {
+                    paintCell(cell);
+                } else if (rmbDown) {
+                    clearCell(cell);
+                }
             });
             cell.addEventListener('mousedown', (e) => {
-                handleMouseButtons(cell);
+                switch (e.button) {
+                    case 0:
+                        paintCell(cell);
+                        break;
+                    case 2:
+                        clearCell(cell);
+                        break;
+
+                    default:
+                        break;
+                }
             });
             cell.addEventListener('contextmenu', (e) => {
                 e.preventDefault();
@@ -84,14 +100,6 @@ function createGrid(sideLength) {
             row.appendChild(cell);
         }
         container.appendChild(row);
-    }
-}
-
-function handleMouseButtons(cell) {
-    if (lmbDown) {
-        paintCell(cell);
-    } else if (rmbDown) {
-        clearCell(cell);
     }
 }
 
