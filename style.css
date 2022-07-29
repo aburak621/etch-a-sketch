@@ -1,8 +1,14 @@
+:root {
+  --thickness: 1px;
+}
+
 .container {
   display: flex;
   width: 100%;
   flex-direction: column;
   box-sizing: border-box;
+  border: 0px solid grey;
+  border-width: var(--thickness) 0px 0px var(--thickness);
 }
 
 .row {
@@ -10,7 +16,10 @@
 }
 
 .cell {
-  border: 1px solid grey;
-  padding: 15px;
+  flex: auto;
+  aspect-ratio: 1;
+  border: 0px solid grey;
+  border-width: 0px var(--thickness) var(--thickness) 0px;
+  /* padding: 15px; */
   border-collapse: collapse;
 }

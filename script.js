@@ -1,12 +1,34 @@
 const container = document.querySelector('.container');
 const resizeButton = document.querySelector('#resize');
-resizeButton.addEventListener('click', promptForSize);
+const root = document.querySelector(':root');
+const toggleGridButton = document.querySelector('#toggle-grid');
+
 let size = 16;
 let lmbDown = false;
 let rmbDown = false;
 let mmbDown = false;
+let isGridOn = true;
+let rootStyle = getComputedStyle(root);
+let gridThickness = rootStyle.getPropertyValue('--thickness');
+
+resizeButton.addEventListener('click', promptForSize);
+toggleGridButton.addEventListener('click', toggleGrid);
 
 createGrid(size);
+
+// TODO: Slider grid size
+// TODO: Color picker
+// TODO: Shade and lighten
+// TODO: Clear all button
+
+function toggleGrid() {
+    isGridOn = !isGridOn;
+    if (isGridOn) {
+        root.style.setProperty('--thickness', gridThickness);
+    } else {
+        root.style.setProperty('--thickness', '0px');
+    }
+}
 
 onmousedown = (e) => {
     switch (e.button) {
@@ -23,6 +45,7 @@ onmousedown = (e) => {
             break;
     }
 }
+
 onmouseup = (e) => {
     switch (e.button) {
         case 0:
