@@ -5,6 +5,7 @@ const toggleGridButton = document.querySelector('#toggle-grid');
 const clearAllButton = document.querySelector('#clear-all');
 const sizeSlider = document.querySelector('#sizeSlider');
 const sizePrompt = document.querySelector('#size');
+const colorPicker = document.querySelector('#colorPicker');
 
 let size = 16;
 let lmbDown = false;
@@ -25,7 +26,6 @@ clearAllButton.addEventListener('click', (e) => {
 
 createGrid(size);
 
-// TODO: Color picker
 // TODO: Shade and lighten
 
 function printGridSize(e) {
@@ -93,7 +93,7 @@ function createGrid(sideLength) {
             cell.setAttribute('onmousedown', 'return false');
             cell.addEventListener('mouseenter', (e) => {
                 if (lmbDown) {
-                    paintCell(cell);
+                    paintCell(cell, colorPicker.value);
                 } else if (rmbDown) {
                     clearCell(cell);
                 }
@@ -101,7 +101,7 @@ function createGrid(sideLength) {
             cell.addEventListener('mousedown', (e) => {
                 switch (e.button) {
                     case 0:
-                        paintCell(cell);
+                        paintCell(cell, colorPicker.value);
                         break;
                     case 2:
                         clearCell(cell);
