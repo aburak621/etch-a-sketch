@@ -1,8 +1,9 @@
 const container = document.querySelector('.container');
-const resizeButton = document.querySelector('#resize');
+// const resizeButton = document.querySelector('#resize');
 const root = document.querySelector(':root');
 const toggleGridButton = document.querySelector('#toggle-grid');
 const clearAllButton = document.querySelector('#clear-all');
+const sizeSlider = document.querySelector('#sizeSlider');
 
 let size = 16;
 let lmbDown = false;
@@ -11,20 +12,24 @@ let mmbDown = false;
 let isGridOn = true;
 let rootStyle = getComputedStyle(root);
 let gridThickness = rootStyle.getPropertyValue('--thickness');
+const gridSizes = [4, 8, 16, 32, 64];
 
-resizeButton.addEventListener('click', promptForSize);
+// resizeButton.addEventListener('click', promptForSize);
 toggleGridButton.addEventListener('click', toggleGrid);
-
+sizeSlider.addEventListener('input', resizeGrid);
 clearAllButton.addEventListener('click', (e) => {
     createGrid(size);
 })
 
 createGrid(size);
 
-// TODO: Slider grid size
 // TODO: Color picker
 // TODO: Shade and lighten
 
+function resizeGrid(e) {
+    size = gridSizes[e.target.value];
+    createGrid(size);
+}
 
 function toggleGrid() {
     isGridOn = !isGridOn;
