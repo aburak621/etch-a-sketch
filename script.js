@@ -4,6 +4,7 @@ const root = document.querySelector(':root');
 const toggleGridButton = document.querySelector('#toggle-grid');
 const clearAllButton = document.querySelector('#clear-all');
 const sizeSlider = document.querySelector('#sizeSlider');
+const sizePrompt = document.querySelector('#size');
 
 let size = 16;
 let lmbDown = false;
@@ -17,6 +18,7 @@ const gridSizes = [4, 8, 16, 32, 64];
 // resizeButton.addEventListener('click', promptForSize);
 toggleGridButton.addEventListener('click', toggleGrid);
 sizeSlider.addEventListener('input', resizeGrid);
+sizeSlider.addEventListener('input', printGridSize);
 clearAllButton.addEventListener('click', (e) => {
     createGrid(size);
 })
@@ -25,6 +27,11 @@ createGrid(size);
 
 // TODO: Color picker
 // TODO: Shade and lighten
+
+function printGridSize(e) {
+    let gridSize = gridSizes[e.target.value];
+    sizePrompt.textContent = gridSize + 'x' + gridSize;
+}
 
 function resizeGrid(e) {
     size = gridSizes[e.target.value];
