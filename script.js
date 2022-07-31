@@ -1,11 +1,11 @@
-const container = document.querySelector('.container');
+const container = document.querySelector('.grid-container');
 // const resizeButton = document.querySelector('#resize');
 const root = document.querySelector(':root');
 const toggleGridButton = document.querySelector('#toggle-grid');
 const clearAllButton = document.querySelector('#clear-all');
-const sizeSlider = document.querySelector('#sizeSlider');
+const sizeSlider = document.querySelector('#size-slider');
 const sizePrompt = document.querySelector('#size');
-const colorPicker = document.querySelector('#colorPicker');
+const colorPicker = document.querySelector('#color-picker');
 
 let size = 16;
 let lmbDown = false;

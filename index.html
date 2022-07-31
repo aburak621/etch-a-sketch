@@ -8,16 +8,26 @@
   <title>Etch-A-Sketch</title>
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <!-- <button id="resize">RESIZE GRID</button> -->
-  <input type="color" id="colorPicker">
-  <button id="toggle-grid">TOGGLE GRID</button>
-  <button id="clear-all">CLEAR ALL</button>
-  <input id="sizeSlider" type="range" min="0" max="4" value="2" class="slider" list="rangeList">
-  <div id="size">16x16</div>
-  <div class="container"></div>
+  <h1 class="title"><span class="etch">Etch</span> <span class="a">A</span> <span class="sketch">Sketch</span></h1>
+
+  <div class="container">
+    <div class="buttons">
+      <input type="color" id="color-picker">
+      <button id="toggle-grid"><span class="toggle">Toggle</span> <span class="grid">Grid</span></button>
+      <button id="clear-all"><span class="clear">Clear</span> <span class="all">All</span></button>
+      <div style="width: 95%;">
+        <div id="size">16x16</div>
+        <input id="size-slider" type="range" min="0" max="4" value="2" class="slider" list="rangeList">
+      </div>
+    </div>
+    <div class="grid-container"></div>
+  </div>
 </body>
 
 </html>

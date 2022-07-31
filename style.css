@@ -1,14 +1,55 @@
 :root {
   --thickness: 1px;
+  font-family: 'JetBrains Mono', monospace;
+  background-color: #282C34;
+}
+
+button {
+  font-family: 'JetBrains Mono', monospace;
+  width: 100%;
+  max-width: 300px;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 32px;
+  transition-duration: 0.1s;
+  background-color: #3A414F;
+}
+
+button:hover {
+  background-color: #4a4f58;
+}
+
+button:active {
+  transition-duration: 0.1s;
+  background-color: #1f232b;
 }
 
 .container {
   display: flex;
-  width: 100%;
+  flex: 1;
+  justify-content: center;
+  gap: 100px;
+  margin: 0px 20vw;
+}
+
+.buttons {
+  display: flex;
+  /* flex: 1 1; */
   flex-direction: column;
-  box-sizing: border-box;
-  border: 0px solid grey;
-  border-width: var(--thickness) 0px 0px var(--thickness);
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  gap: 20px;
+}
+
+.grid-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 500px;
+  border-radius: 20px;
+  background-color: #fff;
+  overflow: hidden;
 }
 
 .row {
@@ -20,6 +61,67 @@
   aspect-ratio: 1;
   border: 0px solid grey;
   border-width: 0px var(--thickness) var(--thickness) 0px;
-  /* padding: 15px; */
-  border-collapse: collapse;
+}
+
+input[type='color'] {
+  -webkit-appearance: none;
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 20%;
+  background-color: #3A414F;
+}
+
+input[type='color']::-webkit-color-swatch {
+  border: none;
+  border-radius: 20%;
+}
+
+#size {
+  font-size: 32px;
+  color: #ABB2BF;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.slider {
+  -webkit-appearance: none;
+  height: 5px;
+  width: 100%;
+  border-radius: 8px;
+  background-color: #D9D9D9;
+}
+
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  background: #61AFEF;
+}
+
+h1.title {
+  text-align: center;
+  padding: 0px;
+  margin: 20px;
+  font-size: 64px;
+}
+
+.etch,
+.toggle,
+.clear {
+  color: #61AFEF;
+}
+
+.a {
+  color: #C678DD;
+}
+
+.sketch {
+  color: #98C379;
+}
+
+.grid,
+.all {
+  color: #E06C75;
 }
