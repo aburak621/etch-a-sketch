@@ -4,6 +4,45 @@
   background-color: #282C34;
 }
 
+h1.title {
+  text-align: center;
+  padding: 0px;
+  margin: 20px;
+  font-size: 64px;
+}
+
+.container {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  gap: 100px;
+  margin: 0px 20vw;
+}
+
+input[type='color'] {
+  -webkit-appearance: none;
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 20%;
+  background-color: #3A414F;
+}
+
+input[type='color']::-webkit-color-swatch {
+  border: none;
+  border-radius: 20%;
+}
+
+.buttons {
+  display: flex;
+  /* flex: 1 1; */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  gap: 20px;
+}
+
 button {
   font-family: 'JetBrains Mono', monospace;
   width: 100%;
@@ -23,58 +62,6 @@ button:hover {
 button:active {
   transition-duration: 0.1s;
   background-color: #1f232b;
-}
-
-.container {
-  display: flex;
-  flex: 1;
-  justify-content: center;
-  gap: 100px;
-  margin: 0px 20vw;
-}
-
-.buttons {
-  display: flex;
-  /* flex: 1 1; */
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 40px;
-  gap: 20px;
-}
-
-.grid-container {
-  display: flex;
-  flex-direction: column;
-  flex: 1 0 500px;
-  border-radius: 20px;
-  background-color: #fff;
-  overflow: hidden;
-}
-
-.row {
-  display: flex;
-}
-
-.cell {
-  flex: auto;
-  aspect-ratio: 1;
-  border: 0px solid grey;
-  border-width: 0px var(--thickness) var(--thickness) 0px;
-}
-
-input[type='color'] {
-  -webkit-appearance: none;
-  width: 60px;
-  height: 60px;
-  border: none;
-  border-radius: 20%;
-  background-color: #3A414F;
-}
-
-input[type='color']::-webkit-color-swatch {
-  border: none;
-  border-radius: 20%;
 }
 
 #size {
@@ -100,13 +87,27 @@ input[type='range']::-webkit-slider-thumb {
   background: #61AFEF;
 }
 
-h1.title {
-  text-align: center;
-  padding: 0px;
-  margin: 20px;
-  font-size: 64px;
+.grid-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 500px;
+  border-radius: 20px;
+  background-color: #fff;
+  overflow: hidden;
 }
 
+.row {
+  display: flex;
+}
+
+.cell {
+  flex: auto;
+  aspect-ratio: 1;
+  border: 0px solid grey;
+  border-width: 0px var(--thickness) var(--thickness) 0px;
+}
+
+/* Font coloring */
 .etch,
 .toggle,
 .clear {
@@ -126,7 +127,9 @@ h1.title {
   color: #E06C75;
 }
 
-.footer {
+/* Footer */
+.footer,
+.hint {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -137,6 +140,12 @@ h1.title {
   width: 100%;
   font-size: 20px;
   color: #4a4f58;
+}
+
+.hint {
+  position: relative;
+  font-size: 18px;
+  margin-top: 30px;
 }
 
 .fa-github {
