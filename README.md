@@ -7,4 +7,6 @@ Pixel art creation tool.
 * Change the grid size.
 * Toggle the grid on and off.
 
+[Use it now! 🎨](https://aburak621.github.io/etch-a-sketch/)
+
 ![](EtchASketch.png)
