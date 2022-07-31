@@ -1,4 +1,4 @@
-# etch-a-sketch
+# Etch A Sketch
 Pixel art creation tool.
 * Select your color and paint.
 * Use Alt + Click to quickly select a color from the canvas.
