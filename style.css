@@ -4,10 +4,18 @@
   background-color: #282C34;
 }
 
+body {
+  position: relative;
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
 h1.title {
   text-align: center;
-  padding: 0px;
-  margin: 20px;
+  padding: 20px;
+  margin: 0px;
   font-size: 64px;
 }
 
@@ -146,6 +154,7 @@ input[type='range']::-webkit-slider-thumb {
   position: relative;
   font-size: 18px;
   margin-top: 30px;
+  padding-bottom: 55px;
 }
 
 .fa-github {
